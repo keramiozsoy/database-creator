@@ -3,6 +3,12 @@
 Create Docker Container Of Database What You Choose via Makefile
 
 
+# supported dbs
+- h2
+- postgres
+- mysql
+
+
 # commands
 
 - h2
@@ -27,7 +33,3 @@ make mysql_createdb
 make mysql_dropdb
 ~~~
 
-# supported dbs
-- h2
-- postgres
-- mysql
