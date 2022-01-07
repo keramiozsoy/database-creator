@@ -4,10 +4,12 @@ Create Docker Container Of Database What You Choose via Makefile
 
 
 # supported dbs
+
 - h2
 - postgres
 - mysql
 - mssql
+- mongo
 
 
 # commands
@@ -15,7 +17,7 @@ Create Docker Container Of Database What You Choose via Makefile
 - h2
 ~~~
 make h2_install
-make h2_delete
+make h2_remove
 make h2_open
 ~~~
 
@@ -41,3 +43,14 @@ make mssql_showdbs
 make mssql_createdb 
 make mssql_dropdb
 ~~~
+
+
+- mongo
+~~~
+make mongo_install 
+make mongo_remove
+make mongo_showdbs 
+make mongo_createdb 
+make mongo_dropdb
+~~~
+
