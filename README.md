@@ -55,7 +55,7 @@ make mongo_createdb
 make mongo_dropdb
 ~~~
 
-- mongo
+- couchbase
 ~~~
 make couchbase_install
 make couchbase_showdbs
