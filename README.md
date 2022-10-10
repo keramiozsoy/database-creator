@@ -10,6 +10,7 @@ Create Docker Container Of Database What You Choose via Makefile
 - mysql
 - mssql
 - mongo
+- couchbase
 
 
 # commands
@@ -53,4 +54,11 @@ make mongo_showdbs
 make mongo_createdb 
 make mongo_dropdb
 ~~~
+
+- mongo
+~~~
+make couchbase_install
+make couchbase_showdbs
+~~~
+
 
