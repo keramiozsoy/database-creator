@@ -1,5 +1,5 @@
 .PHONY: h2_install_db h2_remove h2_open
-.PHONY: postgres_install postgres_createdb postgres_dropdb 
+.PHONY: postgres_install postgres_createdb postgres_dropdb couchbase_install
 .PHONY: mysql_install mysql_showdbs mysql_createdb mysql_dropdb
 .PHONY: mssql_install mssql_showdbs mssql_createdb mssql_dropdb
 .PHONY: mongo_install mongo_remove mongo_showdbs mongo_createdb
@@ -60,5 +60,10 @@ mongo_createdb:
 
 mongo_dropdb: 
 	docker exec -it mymongo /usr/bin/mongosh -u root -p secret --eval "db.dropDatabase()"
-	
+
+couchbase_install:
+	docker run -d --name couchbase-db -p 8091-8096:8091-8096 -p 11210-11211:11210-11211 couchbase:community
+
+couchbase_open:
+	open http://localhost:8091
 
