@@ -58,7 +58,7 @@ make mongo_dropdb
 - couchbase
 ~~~
 make couchbase_install
-make couchbase_showdbs
+make couchbase_open
 ~~~
 
 
