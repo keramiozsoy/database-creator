@@ -1,4 +1,4 @@
-.PHONY: h2_install_db h2_remove h2_open
+.PHONY: h2_install_db h2_remove h2_open couchbase_open
 .PHONY: postgres_install postgres_createdb postgres_dropdb couchbase_install
 .PHONY: mysql_install mysql_showdbs mysql_createdb mysql_dropdb
 .PHONY: mssql_install mssql_showdbs mssql_createdb mssql_dropdb
