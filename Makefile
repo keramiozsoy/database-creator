@@ -35,16 +35,16 @@ mysql_dropdb:
 	docker exec -it mysql8 mysql --user=root --password=secret sys -e "DROP DATABASE test_db;"
 
 mssql_install:
-	docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=super_duper_secret" -p 1433:1433 --name=sqlserver2019 -d mcr.microsoft.com/mssql/server:2019-latest
+	docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=super_duper_secret" -p 1433:1433 --name=sqlserveredge -d mcr.microsoft.com/azure-sql-edge
 
 mssql_showdbs:
-	docker exec -it sqlserver2019 /opt/mssql-tools/bin/sqlcmd -s localhost -U SA -P super_duper_secret -q "SELECT name FROM sys.databases;" 
+	docker exec -it sqlserveredge /opt/mssql-tools/bin/sqlcmd -s localhost -U SA -P super_duper_secret -q "SELECT name FROM sys.databases;" 
 
 mssql_createdb:
-	docker exec -it sqlserver2019  /opt/mssql-tools/bin/sqlcmd -s localhost -U SA -P super_duper_secret -q "CREATE DATABASE test_db;"
+	docker exec -it sqlserveredge  /opt/mssql-tools/bin/sqlcmd -s localhost -U SA -P super_duper_secret -q "CREATE DATABASE test_db;"
 
 mssql_dropdb:
-	docker exec -it sqlserver2019  /opt/mssql-tools/bin/sqlcmd -s localhost -U SA -P super_duper_secret -q "DROP DATABASE test_db;"
+	docker exec -it sqlserveredge  /opt/mssql-tools/bin/sqlcmd -s localhost -U SA -P super_duper_secret -q "DROP DATABASE test_db;"
 
 mongo_remove:
 	docker rm mymongo
